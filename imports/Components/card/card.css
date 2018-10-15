@@ -1,0 +1,62 @@
+.creature{
+  margin: .1in;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 100%;
+  position: relative;
+  height: 1.8in;
+  width: 1.5in;
+}
+.creature-habitat-symbol{
+  width: 80%;
+  margin-top: 8%;
+}
+.mutation-info{
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+.creature-effects{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  font-size: .8em;
+}
+.creature-picture-container{
+  height: calc(100%*(1328/1645));
+  display: flex;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+}
+.creature-picture{
+  position: absolute;
+  width: 100%;
+}
+.creature-footer{
+  height: 6%;
+  overflow: hidden;
+}
+.prev-circle-left{
+  position: relative;
+}
+.prev-circle-left>.creature-power{
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+.prev-circle-left>.creature-effect{
+  position: absolute;
+  top: 50%;
+  left: 100%;
+}
+.prev-circle-left>.creature-toughness{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.prev-circle-right{
+  position: relative;
+}

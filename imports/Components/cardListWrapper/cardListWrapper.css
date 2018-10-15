@@ -1,0 +1,26 @@
+.wrapper{
+  overflow: hidden
+}
+.overlay .tab{
+  width: 18px;
+}
+.overlay .tab:before{
+  content: '\f101';
+  font-family: FontAwesome;
+}
+.overlay.in .tab:before{
+  content: '\f100';
+  font-family: FontAwesome;
+}
+.filter{
+  overflow-y: auto;
+}
+.filter > .dropdown{
+  border-bottom: 1px solid white;
+}
+.tab, .filter{
+  background-color: rgba(50,50,50,.95);
+}
+.overlay.in{
+  left: calc(100% - 18px);
+}

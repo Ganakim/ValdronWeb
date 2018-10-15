@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style : normal;
+         src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+         src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+               url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+               url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+               url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+               url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+body{
+  height: 100vh;
+  overflow-x: hidden;
+}
+.content-true{
+  padding-left: 250px;
+  padding-top: 28px;
+  z-index: -1;
+}
+.content-false{
+  z-index: -1;
+}
+.content-semi{
+  padding-left: 30px;
+  padding-top: 28px;
+}
+.pointer{
+  cursor: pointer;
+}
+.input{
+  cursor: text;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #1d2124;
+  min-height: 1.5em;
+}
+.h-0{
+  height: 0;
+}
+.w-0{
+  width: 0;
+}
+.f-1{
+  flex: 1;
+}
+.f-2{
+  flex: 2;
+}
+.f-3{
+  flex: 3;
+}
+.f-4{
+  flex: 4;
+}
+.f-5{
+  flex: 5;
+}
+.length-indicator{
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rounded-left-0{
+  border-top-left-radius: 0!important;
+  border-bottom-left-radius: 0!important;
+}
+.rounded-right-0{
+  border-top-right-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+}
+.dropdownTrigger{
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dropdownIndicator-left:after, .dropdownIndicator-right:after{
+  content: "\f0d7";
+  font-family: FontAwesome;
+}
+.dropdownIndicator-left.flat:after{
+  content: "\f0d9";
+  font-family: FontAwesome;
+}
+.dropdownIndicator-right.flat:after{
+  content: "\f0da";
+  font-family: FontAwesome;
+}
+.cardsList{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

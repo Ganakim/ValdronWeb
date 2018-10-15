@@ -1,0 +1,15 @@
+<template name="shop">
+	<div class='d-flex'>
+		<div class="w-25">
+			Their money/ stats (this is just for learning)
+		</div>
+		<div class=w-75>
+			<div class="d-flex justify-content-center w-100">
+				center
+			</div>
+			{{#each search "Sets" "_id" false}}
+				{{>set (set this)}}
+			{{/each}}
+		</div>
+	</div>
+</template>

@@ -1,0 +1,24 @@
+<template name="cardListWrapper">
+	<div class="position-relative {{classes}}">
+		<div class="position-absolute d-flex align-content-start flex-wrap h-100 w-100">
+			{{#each cards}}
+				{{>card (card this .65)}}
+			{{/each}}
+		</div>
+		<div class="position-absolute d-flex justify-content-end w-100 h-100 wrapper">
+			<div class="position-relative w-75 h-100">
+				<div class="overlay position-absolute d-flex align-items-start in w-100 h-100">
+					<div class="text-light rounded-left p-1 tab"></div>
+					<div class="text-light filter f-1 h-100 pb-4">
+						{{#each sortAndFilters}}
+							{{>dropdown this}}
+						{{/each}}
+						<div class="btn btn-primary mt-2 ml-2 save">
+							Save
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

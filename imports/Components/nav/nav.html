@@ -1,0 +1,17 @@
+<template name="nav">
+	<div class="navInfo bg-primary px-3 pb-1 pointer text-light">
+		{{>loginButtons}}
+	</div>
+	<div class="navBtns align-items-center d-flex bg-light pr-1 rounded border semi">
+		<div class="d-flex flex-column f-1">
+			{{#each navBtns}}
+				<div id="{{path}}NavBtn" class="my-3 btn btn-primary w-100">
+					{{text}}
+				</div>
+			{{/each}}
+		</div>
+		<div class="pl-3">
+			>
+		</div>
+	</div>
+</template>

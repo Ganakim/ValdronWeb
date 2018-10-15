@@ -1,0 +1,42 @@
+<template name="dropdown">
+	<div class="dropdown">
+		<div class="title d-flex ml-2">
+			<div class="indicator"></div>
+			<strong>
+				{{#if options}}
+					{{name}}: {{currentSort id}}
+				{{else}}
+					{{name}}
+				{{/if}}
+			</strong>
+		</div>
+		<div class="w-100 d-flex flex-column options h-0">
+			{{#if options}}
+				{{#each options}}
+					<div class="px-4 w-100 border-bottom border-light pointer option">
+						{{this}}
+					</div>
+				{{/each}}
+			{{else}}
+				{{#each data}}
+					{{#if is "checkbox"}}
+						<div id="{{id}}" class="px-4">
+							<input type="checkbox" name="checkbox{{@index}}">
+							<label for="checkbox{{@index}}">{{text}}</label>
+						</div>
+					{{/if}}
+					{{#if is "range"}}
+						<div id="{{id}}" class="px-4 pb-2 d-flex flex-column">
+							{{text}}:
+							<div class="d-flex justify-content-around align-items-center">
+								<input type="text" name="min{{@index}}" placeholder="min" class="w-25">
+								<i class="fas fa-minus"></i>
+								<input type="text" name="max{{@index}}" placeholder="max" class="w-25">
+							</div>
+						</div>
+					{{/if}}
+				{{/each}}
+			{{/if}}
+		</div>
+	</div>
+</template>

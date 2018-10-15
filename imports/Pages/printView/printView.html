@@ -1,0 +1,48 @@
+<template name="printView">
+	<div class="d-flex flex-wrap">
+		{{#if deck}}
+			{{#each deck}}
+				<div class="creature d-flex flex-column">
+					<div class="d-flex f-1">
+		        <div class="mutation-info border-right border-dark">
+		          <img class="creature-habitat-symbol" src="{{search 'Habitats' 'picture' habitat}}">
+		          {{mutation}}
+		        </div>
+		        <div class="d-flex flex-column f-1">
+		          <div class="creature-header d-flex flex-column f-1 p-1">
+		            {{name}}
+		          </div>
+		          <div class="creature-picture-container">
+		            <img class="creature-picture" src="{{picture}}">
+		            <div class="px-1 w-100 creature-effects">
+		              {{#each effects}}
+		                {{#if this}}
+		                  <div class="border border-dark p-1">
+		                    {{search "Effects" "name" this}}
+		                  </div>
+		                {{/if}}
+		              {{/each}}
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="creature-footer h-25">
+		        <div class="d-flex justify-content-between h-100">
+		          <div class="d-flex align-items-center h-100">
+		            {{power}}/{{retaliation}}/{{toughness}}
+		          </div>
+		          <div class="d-flex align-items-center h-100">
+		            <div>
+		              {{search "Habitats" "name" habitat}}
+		            </div>
+		            <div>
+		              {{search "Sets" "name" set}}
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+			{{/each}}
+		{{/if}}
+	</div>
+</template>

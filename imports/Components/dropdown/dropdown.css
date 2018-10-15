@@ -1,0 +1,14 @@
+.options{
+  overflow: hidden;
+}
+.indicator{
+  width: 16px;
+}
+.indicator:before{
+  content: '\f105';
+  font-family: FontAwesome;
+}
+.indicator.h-0:before{
+  content: '\f107';
+  font-family: FontAwesome;
+}

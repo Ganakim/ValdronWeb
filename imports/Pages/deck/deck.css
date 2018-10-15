@@ -1,0 +1,57 @@
+.counter{
+  height: 1.3em;
+  width: 1.3em;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+.counter>div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+.deck-list{
+  overflow-y: scroll;
+  max-height: 600px;
+}
+.deckListDeck{
+  display: flex;
+  align-items: center;
+}
+.deckListDeck>div{
+  overflow-x: scroll;
+  width: 75px;
+}
+.deckListDeck>div::-webkit-scrollbar {
+  height: 0px;
+  background: transparent;
+}
+.deckListDeck>div:focus{
+  cursor: text;
+  outline: none !important;
+}
+.deckListDeck>div.editing{
+  width: auto;
+}
+.deck-list-item{
+  width: 185px;
+}
+.deck-list-item.editing{
+  width: auto;
+}
+.deck-list-item:not(:first-child){
+  margin-top: 1rem;
+}
+.card-deck-library{
+  overflow-y: scroll;
+}
+.saveDeckCheck{
+  cursor: pointer;
+  margin-left: 20px;
+  display: none;
+}
+.editing + .saveDeckCheck{
+  display: inline;
+}

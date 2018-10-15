@@ -1,0 +1,32 @@
+<template name="generate">
+	<div class="d-flex align-items-end">
+		<div class="form-group">
+	    Habitat:
+	    <select class="form-control" id="habitatSelect">
+	    	{{#each (search "Habitats" "name" false)}}
+	    		<option>{{name}}</option>
+	    	{{/each}}
+	    </select>
+	  </div>
+		<div class="form-group">
+	    Mutation level:
+	    <select class="form-control" id="mutationSelect">
+	    	<option>1</option>
+	    	<option>2</option>
+	    	<option>3</option>
+	    	<option>4</option>
+	    	<option>5</option>
+	    </select>
+	  </div>
+		<div class="form-group">
+	    Quantity:
+	    <input type="number" class="form-control" id="quantitySelect" value="1">
+	  </div>
+	  <div class="form-group">
+	  	<div class="btn btn-primary genBtn">Generate</div>
+	  </div>
+	</div>
+	{{#each genCards}}
+		<div>{{>localCard _id}}</div>
+	{{/each}}
+</template>

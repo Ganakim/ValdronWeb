@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "$": false,
+    "Meteor": false,
+    "Template": false,
+    "Session": false,
+    "Habitats": false,
+    "Cards": false,
+    "Sets": false,
+    "Decks": false,
+    "Effects": false,
+    "window": false
+  }
+}

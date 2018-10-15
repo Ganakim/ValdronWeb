@@ -1,0 +1,18 @@
+.card-body.flat, .dropdown.flat{
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.colList{
+  overflow-y: scroll;
+  max-height: 350px;
+}
+.sets-edit-cards-list{
+  overflow-y: scroll;
+  max-height: 300px;
+}
+.colListItem{
+  overflow-y: scroll;
+  max-height: 600px;
+}

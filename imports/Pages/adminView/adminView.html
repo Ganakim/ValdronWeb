@@ -1,0 +1,167 @@
+<template name="adminView">
+	<div class="d-flex">
+		<div class="w-50">
+			<div class="acordian">
+				{{#each tabs}}
+					<div class="acordianItem">
+						<div class="card">
+							<div class="card-header">
+								{{name}}
+							</div>
+							<div class="card-body {{name}}-body d-flex flat">
+								<div class="w-50">
+									<div class="colList bg-light">
+										{{#each (search name false false)}}
+											<div class="colListItem-{{_id}} d-flex">
+												{{#if cards}}
+													<div class="length-indicator mr-1 align-items-center">
+														{{cards.length}}
+													</div>
+												{{/if}}
+												{{name}}
+											</div>
+										{{/each}}
+									</div>
+									<div class="btn btn-success colListItemNew">
+										New
+									</div>
+								</div>
+								<div id="{{name}}ColList" class="w-50 d-flex flex-column ml-3">
+									{{#if currentColItem}}
+										<div class="colListItem">
+											{{#each (fields currentColItem)}}
+												{{#if (is "effects")}}
+													<div class="dropdownTrigger d-flex">
+														<div>Effects</div>
+														<div class="ml-1 dropdownIndicator-left flat"></div>
+													</div>
+													<div class="bg-light dropdown flat">
+														<div id="colListItemEffect0" contenteditable="true" class="input">
+															{{#if data.[0]}}
+																{{search "Effects" "name" data.[0]}}
+															{{/if}}
+														</div>
+														<div id="colListItemEffect1" contenteditable="true" class="input">
+															{{#if data.[1]}}
+																{{search "Effects" "name" data.[1]}}
+															{{/if}}
+														</div>
+													</div>
+												{{else}}
+													{{#if (is "prev")}}
+														<div class="dropdownTrigger d-flex">
+															<div>Mutation Requirements</div>
+															<div class=" ml-1 dropdownIndicator-left flat"></div>
+														</div>
+														<div class="bg-light d-flex dropdown flat">
+															<div class="w-50 pr-1">
+																<div>Card 1:</div>
+																name:
+																<div id="colListItemPrev0name" contenteditable="true" class="input">
+																	{{#if data.[0].name}}
+																		{{data.[0].name}}
+																	{{/if}}
+																</div>
+																habitat:
+																<div id="colListItemPrev0habitat" contenteditable="true" class="input">
+																	{{search "Habitats" "name" data.[0].habitat}}
+																</div>
+																<div>
+																	has effect?
+																	<input type="checkbox" checked="{{data.[0].effect}}" id="colListItemPrev0effect" class="input">
+																</div>
+																power:
+																<div id="colListItemPrev0power" contenteditable="true" class="input">
+																	{{#if data.[0].power}}
+																		{{data.[0].power}}
+																	{{/if}}
+																</div>
+																toughness:
+																<div id="colListItemPrev0toughness" contenteditable="true" class="input">
+																	{{#if data.[0].toughness}}
+																		{{data.[0].toughness}}
+																	{{/if}}
+																</div>
+															</div>
+															<div class="w-50 pr-1">
+																<div>Card 2:</div>
+																name:
+																<div id="colListItemPrev1name" contenteditable="true" class="input">
+																	{{#if data.[1].name}}
+																		{{data.[1].name}}
+																	{{/if}}
+																</div>
+																habitat:
+																<div id="colListItemPrev1habitat" contenteditable="true" class="input">
+																	{{#if data.[1].habitat}}
+																		{{search "Habitats" "name" data.[1].habitat}}
+																	{{/if}}
+																</div>
+																<div>
+																	has effect?
+																	<input type="checkbox" checked="{{data.[1].effect}}" id="colListItemPrev1effect" class="input">
+																</div>
+																power:
+																<div id="colListItemPrev1power" contenteditable="true" class="input">
+																	{{#if data.[1].power}}
+																		{{data.[1].power}}
+																	{{/if}}
+																</div>
+																toughness:
+																<div id="colListItemPrev1toughness" contenteditable="true" class="input">
+																	{{#if data.[1].toughness}}
+																		{{data.[1].toughness}}
+																	{{/if}}
+																</div>
+															</div>
+														</div>
+													{{else}}
+														{{#if is "cards"}}
+															Cards:
+															<div class="sets-edit-cards-list">
+																{{#each data}}
+																<div class="d-flex">
+																	<div id="colListItemCards{{@index}} d-flex" contenteditable="true" class="input">
+																		{{search "Cards" "name" this}}
+																	</div>
+																	<i class="extCardLink pointer fas fa-external-link-alt"></i>
+																</div>
+																{{/each}}
+															</div>
+														{{else}}
+															<div>
+																{{field}}:
+																<div id="colListItem{{capitalize field}}" contenteditable="true" class="input">
+																	{{#if id}}
+																		{{search (capitalize (pluralize field)) "name" data}}
+																	{{else}}
+																		{{data}}
+																	{{/if}}
+																</div>
+															</div>
+														{{/if}}
+													{{/if}}
+												{{/if}}
+											{{/each}}
+										</div>
+										<div class="d-flex mt-1">
+											<div class="btn btn-warning colListItemSave">
+												Save
+											</div>
+											<div class="btn btn-danger ml-1 colListItemDelete">
+												Delete
+											</div>
+										</div>
+									{{/if}}
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="w-50">
+			
+		</div>
+	</div>
+</template>

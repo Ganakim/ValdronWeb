@@ -1,0 +1,51 @@
+<head>
+  <title>Valdron</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  {{>main}}
+</body>
+
+<template name="main">
+  {{#if hasNav}}
+    {{>nav}}
+  {{/if}}
+  <div class="content-{{hasNav}} w-100 h-100 bg-white">
+    {{>Template.dynamic template=content}}
+  </div>
+</template>
+
+<template name="topLevel">
+  <div class="position-fixed d-flex flex-column px-3 py-4 menuTab">
+    <input id="playerName" type="text" class="my-4" placeholder="Player Name">
+      <div class="btn btn-light m-1 d-flex flex-row align-items-center capture">
+        Capture
+      </div>
+    {{#each btns}}
+      <div class="btn btn-light m-1 d-flex flex-row align-items-center {{disabled}}">
+        {{text}}
+        {{#if counter}}
+          <div class="counter ml-2">
+            <div>
+              {{counter}}
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    {{/each}}
+    <div class="bg-dark p-3">
+      {{#each filter}}
+        <div class="d-flex flex-row align-items-center ml-3 mb-2 text-light">
+          <input class="filterBox" type="checkbox">{{#if img}}<img src="{{img}}" class="habitatSymbol">{{else}}{{text}}{{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  {{> Template.dynamic template=content}}
+</template>
